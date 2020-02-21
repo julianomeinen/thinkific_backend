@@ -2,7 +2,7 @@ const express = require("express");
 const routes = express.Router();
 
 routes.get("/", function(req, res) {
-  return res.send("running ok");
+  return res.send("Running ok. Please, call the correct endpoint: current, next or current (POST with current parameter) ");
 });
 
 const SequenceController = require("./app/controller/SequenceController");

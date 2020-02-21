@@ -15,23 +15,24 @@ class SequenceController {
   
   // Get the current value
   async current(req, res) {
-    const data = await Sequence.findOne({ _id: "5e4fd7885478d2293824f671" });
+    const data = await Sequence.findOne({ _id: "5e4fd7885478d2293824f671" }).select("current");
+    res.setHeader('Content-Type', 'application/json');
     return res.json(data);
   }
 
   // Update the current value +1 and return new value
   async next(req, res) {
     
-    const current = await Sequence.findOne({ _id: "5e4fd7885478d2293824f671" });
-    current.integer+=1;
+    const now_current = await Sequence.findOne({ _id: "5e4fd7885478d2293824f671" }).select("current");
+    now_current.current+=1;
 
     const data = await Sequence.updateOne({ _id: "5e4fd7885478d2293824f671" }, {
-        integer: current.integer
+      current: now_current.current
     },
     function(err) {
        if(err)
             return res.status(400).json(err);
-        return res.json(current);
+        return res.json(now_current);
     })
   }
 
@@ -39,7 +40,7 @@ class SequenceController {
   async setCurrent(req, res) {
     const values = req.query ? req.query : req.body;
     const data = await Sequence.updateOne({ _id: "5e4fd7885478d2293824f671" }, {
-        integer: values.integer
+      current: values.current
     }, 
     { runValidators: true }, 
     function(err, affected, resp) {
