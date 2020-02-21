@@ -12,7 +12,7 @@ module.exports = (req, rest, next) => {
     if(!parts.length === 2)
         return rest.status(401).send( { error: 'Token structure error'} );
 
-    const [ scheme, token] = parts;
+    const [scheme, token] = parts;
 
     if(!/^Bearer$/i.test(scheme))
         return rest.status(401).send( { error: 'Token malformatted'} );

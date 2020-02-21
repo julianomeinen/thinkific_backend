@@ -1,6 +1,9 @@
 const express = require("express");
 const db = require("./database/config");
 const mongoose = require("mongoose");
+const bodyParser = require('body-parser');
+const cors = require('cors');
+
 
 class App {
   constructor() {
@@ -8,7 +11,7 @@ class App {
     this.database();
     this.middlewares();
     this.routes();
-
+    
     // Config to heroku.com
     let port = process.env.PORT;
     if (port == null || port == "") {
@@ -26,6 +29,9 @@ class App {
 
   middlewares() {
     this.express.use(express.json());
+    this.express.use(bodyParser.json());
+    this.express.use(express.urlencoded());
+    this.express.use(cors());
   }
 
   routes() {

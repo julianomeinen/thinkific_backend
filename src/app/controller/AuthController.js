@@ -4,7 +4,7 @@ const authConfig = require('../config/auth');
 class AuthController {
   
   async authenticate(req, res) {
-    const { email, password} = req.query;
+    const { email, password} = req.body;
 
     if(!email)
         return res.status(400).send( { error: 'Empty email' });
@@ -19,7 +19,7 @@ class AuthController {
         return res.status(400).send( { error: 'Invalid email or password'  });
     }
 
-    const token = jwt.sign( { id: email }, authConfig.secret , { expiresIn: 86400 });
+    const token = jwt.sign( { id: email }, authConfig.secret , { expiresIn: 3600 }); // 1 hour valid token
 
     return res.json({ email, token } );
 

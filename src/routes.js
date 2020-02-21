@@ -16,7 +16,7 @@ routes.get("/current", SequenceController.current);
 routes.post("/current", SequenceController.setCurrent);
 routes.get("/next", SequenceController.next);
 
-// Just test
+// Just for fun :)
 // routes.post("/new", SequenceController.store);
 
 module.exports = routes;
