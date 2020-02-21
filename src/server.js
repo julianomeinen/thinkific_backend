@@ -9,8 +9,14 @@ class App {
     this.middlewares();
     this.routes();
 
-    this.express.listen(3000, () =>
-      console.log('API runnig on port 3000')
+    // Config to heroku.com
+    let port = process.env.PORT;
+    if (port == null || port == "") {
+      port = 3000;
+    }
+
+    this.express.listen(port, () =>
+      console.log('API runnig on port ' + port)
     );
   }
 
@@ -25,5 +31,6 @@ class App {
   routes() {
     this.express.use(require("./routes"));
   }
+
 }
 module.exports = new App().express;
