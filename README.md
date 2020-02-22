@@ -7,6 +7,8 @@ Thinkific Home Test Backend
 ### Location of deployed application
 Backend: https://thinkificbackend.herokuapp.com/
 Frontend: https://thinkificfrontend.herokuapp.com/
+Backend Repository: https://github.com/julianomeinen/thinkific_backend
+Frontend Repository: https://github.com/julianomeinen/thinkific_frontend
 ### Time spent
 Backend: 7 hours
 Frontend: 2 hours
@@ -24,15 +26,16 @@ I could have structured the code better with a scalable architecture. I did the 
 - A simple login page was created with HTML, Bootstrap and Ajax.
 3. Allow sign up using OAuth
 - Goal achieved!
-- You can login with Google account. Add Facebook ou Github it's easy, but I didn't because of time designation.
+- You can login with Google account. It's easy to add Facebook or Github, but I didn't because of time designation.
 ### Instructions to run assignment locally
-Option 1: Just access https://thinkificfrontend.herokuapp.com.
-Option 2: You can run the app locally if you want. Just clone the repository and run it with Node JS.
+Option 1: Just access https://thinkificfrontend.herokuapp.com/.
+Option 2: You can run the app locally if you want. Just clone the backend repository (https://github.com/julianomeinen/thinkific_backend) and run it with Node JS.
 Option 3: You can use a software like Postman to do the POST and GET requests for tests.
 ### What did you not include in your solution that you want us to know about?
-- Frontend MVC: because of the time I couldn't build.
+- Frontend MVC: because of the time I couldn't build it. I built a simple web page for test.
 - Facebook and GitHub login: because of the time I couldn't build.
 - Tests: I didn't have enough time to create the automatic tests.
 ### Other information about your submission that you feel it's important that we know if applicable.
+I just want to thank you for the opportunity.
 ### Your feedback on this technical challenge
-I think it could be a nice challenge to code a simple CRUD with SQL and NoSQL.
+I think it could be a nice challenge to code a simple CRUD with SQL and NoSQL databases.
