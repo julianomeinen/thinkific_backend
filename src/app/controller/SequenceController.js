@@ -38,7 +38,7 @@ class SequenceController {
 
   // Set a new value to current
   async setCurrent(req, res) {
-    const values = req.query ? req.query : req.body;
+    const values = req.body;
     const data = await Sequence.updateOne({ _id: "5e4fd7885478d2293824f671" }, {
       current: values.current
     }, 

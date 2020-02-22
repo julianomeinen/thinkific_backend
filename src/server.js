@@ -3,7 +3,7 @@ const db = require("./database/config");
 const mongoose = require("mongoose");
 const bodyParser = require('body-parser');
 const cors = require('cors');
-
+const passport = require('passport');
 
 class App {
   constructor() {
@@ -32,6 +32,8 @@ class App {
     this.express.use(bodyParser.json());
     this.express.use(express.urlencoded());
     this.express.use(cors());
+    this.express.use(passport.initialize());
+    this.express.use(passport.session());
   }
 
   routes() {
