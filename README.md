@@ -32,6 +32,7 @@ Option 3: You can use a software like Postman to do the POST and GET requests fo
 ### What did you not include in your solution that you want us to know about?
 - Frontend MVC: because of the time I couldn't build.
 - Facebook and GitHub login: because of the time I couldn't build.
+- Tests: I didn't have enough time to create the automatic tests.
 ### Other information about your submission that you feel it's important that we know if applicable.
 ### Your feedback on this technical challenge
 I think it could be a nice challenge to code a simple CRUD with SQL and NoSQL.
